@@ -1,0 +1,88 @@
+/*
+.theme-dark {
+  --color-base-00: #000;
+  --color-base-20: #000;
+  --color-base-25: #000;
+  --color-base-30: #000;
+  --background-modifier-hover: #000;
+  --code-background: #000;
+  --status-bar-background: rgba(0,0,0,.3);
+}
+* { text-shadow: 0 0 .15em currentcolor; }
+.callout {
+  background: none;
+  border: 1px solid rgb(var(--callout-color));
+}
+.theme-dark .callout {
+  box-shadow: 0 0 .5em .5em rgba(var(--callout-color), .15), 0 0 .5em .5em inset rgba(var(--callout-color), .15);
+}
+.theme-dark .callout-title, .theme-dark .callout-icon > .svg-icon { color: white; }
+.theme-dark .callout-title {
+  text-shadow: 0 0 10px rgb(var(--callout-color)), 0 0 10px rgb(var(--callout-color));
+}
+.theme-dark .callout-icon > .svg-icon {
+  filter: drop-shadow(0px 0px 3px rgb(var(--callout-color))) drop-shadow(0px 0px 3px rgb(var(--callout-color)));
+}
+.markdown-rendered pre { border: 1px solid currentcolor; }
+*/
+
+
+/**/
+
+.theme-dark {
+  --color-base-00: #000;
+  --color-base-10: #000;
+  --color-base-20: #000;
+  --color-base-25: #000;
+  --color-base-30: #000;
+  /*--color-base-35: #000;
+  --color-base-40: #000;
+  --color-base-50: #000;
+  --color-base-60: #000;*/
+  
+  --color-base-70: #222;
+  --color-base-100: #333;
+}
+
+
+
+.callout {
+  background-color: transparent !important;
+}
+
+button.mod-cta, button.mod-warning {
+  background-color: transparent;
+  /*color: var(--text-normal)*/
+  /*background-color: var(--interactive-accent);
+  color: var(--text-on-accent);*/
+}
+
+.horizontal-tab-nav-item.is-active,
+.vertical-tab-nav-item.is-active {
+  background-color: transparent;
+  /*background-color: var(--interactive-accent);
+  color: var(--text-on-accent);*/
+}
+
+.modal {
+  border-color: transparent;
+}
+
+
+
+.markdown-preview-view { color: #331 }
+
+.inline-title, a, .external-link { color: #321 }
+
+h2 { color: #321 !important; }
+
+.callout-icon .svg-icon, .callout-title { color: #321; }
+
+.cm-s-obsidian span.cm-hmd-internal-link,
+.cm-s-obsidian span.cm-link {
+  color: #321;
+}
+
+body {
+  color: #331;
+}
