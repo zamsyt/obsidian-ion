@@ -145,8 +145,6 @@
 /**/
 
 body {
-  /*--test: var(--color-accent-1);
-  --test-2: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) - 50%));*/
   --test: #024;
   --test-2: #012;
 }
@@ -161,7 +159,7 @@ body {
   --color-base-50: var(--test);
   /*--color-base-60: #000;*/
   --color-base-70: var(--test);
-  --color-base-100: var(--test);
+  /*--color-base-100: var(--test);*/
 }
 button.mod-cta, button.mod-warning,
 .horizontal-tab-nav-item.is-active,
@@ -210,59 +208,52 @@ body:not(.native-scrollbars) ::-webkit-scrollbar-thumb:active {
 
 /**/
 
-/*:root h2 {
-  --bloom: calc(.4em);
-  text-shadow: 0 0 var(--bloom) currentColor;
-}*/
-
 body {
-  /*--ion-white: 3000;*/
-  /*--ion-fct: calc(var(--ion-white) / 256);*/
-
-  /*--text-h: 90;
-  --text-s: 100%;*/
-  /*--h2-h: 360;
-  --h2-s: 100%;*/
-  /*TEST --h2-color: hsl(0, 100%, calc(200% / 4 ));*/
-
-  /*--ion-fct: .5;
-  --text-l: 100%;
-  --h2-l: 100%;
-
-  --h2-color: hsl(0, 100%,
-    calc(var(--h2-l) * var(--ion-fct)));
-
-  --text-normal: hsl(40, 100%,
-    calc(var(--text-l) * var(--ion-fct)));*/
-
-  /*--h2-color: hsl(360, 100%, 50%);
-  --text-normal: hsl(40, 40%, 50%);*/
-
-
-  /**/
-
   --bloom: .03em;
-
-  /*--ion-fct: .5;*/
   --ion-threshold: 80;
 
-  --text-h: 40;
-  --text-s: 100%;
-  --ion-text-l: 50;
-  --text-l: calc(var(--ion-text-l) * 1%);
-  /*--text-normal: hsl(var(--text-h), var(--text-s),
-    calc(var(--text-l) * var(--ion-fct)));*/
-  --text-normal: hsl(var(--text-h), var(--text-s), var(--text-l));
-
-  --h2-h: 45;
-  --h2-s: 100%;
-  --ion-h2-l: 110;
-  --h2-l: calc(var(--ion-h2-l) * 1%);
-  --h2-color: hsl(var(--h2-h), var(--h2-s), var(--h2-l));
+  --current-h:     35;
+  --current-s:     100%;
+  --ion-current-l: 85;
 }
 
-:root h2 {
-  --bloom-color: hsl(var(--h2-h), var(--h2-s), 50%);
-  --bloom-size: calc(var(--bloom) * (var(--ion-h2-l) - var(--ion-threshold)));
+* {
+  --current-l: calc(var(--ion-current-l) * 1%);
+  --ion-current-color: hsl(var(--current-h), var(--current-s), var(--current-l));
+  --bloom-color: hsl(var(--current-h), var(--current-s), 50%);
+  --bloom-size: calc(var(--bloom) * (var(--ion-current-l) - var(--ion-threshold)));
+}
+
+/*.HyperMD-header,*/
+.markdown-preview-view :is(*, h2),
+.inline-title,
+.cm-line,
+.cm-s-obsidian span.cm-link, .cm-s-obsidian span.cm-hmd-internal-link {
+  color: var(--ion-current-color);
   text-shadow: 0 0 var(--bloom-size) var(--bloom-color), 0 0 min(calc(var(--bloom-size) / 2), 1em) var(--bloom-color);
+}
+
+h2 {
+  --current-h:     90;
+  --current-s:     100%;
+  --ion-current-l: 85;
+}
+
+p, .cm-line {
+  --current-h:     220;
+  --current-s:     50%;
+  --ion-current-l: 90;
+}
+
+.cm-link, .cm-hmd-internal-link {
+  --current-h: var(--accent-h);
+  --current-s: var(--accent-s);
+  --ion-current-l: 90;
+}
+
+hr {
+  --ion-current-l: 120;
+  border-width: 1px;
+  border-color: var(--ion-current-color);
+  box-shadow: 0 0 var(--bloom-size) 1px var(--bloom-color), 0 0 min(calc(var(--bloom-size) / 2), 1em) 1px var(--bloom-color);
 }
