@@ -144,18 +144,23 @@
 
 /**/
 
+body {
+  --test: var(--color-accent-1);
+  --test-2: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) - 50%));
+}
+
 .theme-dark {
   --color-base-00: #000;
   --color-base-10: #000;
   --color-base-20: #000;
   --color-base-25: #000;
-  --color-base-30: #011;
+  --color-base-30: var(--test-2);
   /*--color-base-35: #000;
   --color-base-40: #000;*/
-  --color-base-50: #0af;
+  --color-base-50: var(--test);
   /*--color-base-60: #000;*/
-  --color-base-70: #0af;
-  --color-base-100: #0af;
+  --color-base-70: var(--test);
+  --color-base-100: var(--test);
 }
 
 button.mod-cta, button.mod-warning,
@@ -176,17 +181,17 @@ body,
 .cm-s-obsidian span.cm-hmd-internal-link,
 .cm-s-obsidian span.cm-link,
 .empty-state-action {
-  color: #0af
+  color: var(--test)
 }
 
-h2 { color: #0af !important; }
+h2 { color: var(--test) !important; }
 
 .modal,
 .markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote:before,
 .markdown-source-view.mod-cm6 .cm-blockquote-border:before,
 .markdown-rendered blockquote,
 .nav-folder.mod-root .nav-folder > .nav-folder-children {
-  border-color: #0af;
+  border-color: var(--test);
 }
 
 body:not(.native-scrollbars) ::-webkit-scrollbar-thumb,
@@ -195,10 +200,10 @@ body:not(.is-grabbing) :is(
   .nav-file-title.is-active, .nav-folder-title.is-active
 ):hover,
 :is(.nav-file-title, .nav-folder-title).is-active {
-  background-color: #012;
+  background-color: var(--test-2);
 }
 
 body:not(.native-scrollbars) ::-webkit-scrollbar-thumb:hover,
 body:not(.native-scrollbars) ::-webkit-scrollbar-thumb:active {
-  background-color: #0af;
+  background-color: var(--test);
 }
