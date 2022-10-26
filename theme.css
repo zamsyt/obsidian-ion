@@ -180,7 +180,7 @@ button.mod-cta, button.mod-warning,
 /*body,*/
 /*.markdown-preview-view,*/
 .inline-title, a, .external-link,
-.callout-icon .svg-icon, .callout-title,
+/*.callout-icon .svg-icon, .callout-title,*/
 .cm-s-obsidian span.cm-hmd-internal-link,
 .cm-s-obsidian span.cm-link,
 .empty-state-action {
@@ -230,11 +230,12 @@ body {
 }
 
 /*.HyperMD-header,*/
-.markdown-preview-view :is(*, h2),
+.markdown-preview-view :is(/**,*/ h2),
 .inline-title,
 .cm-line,
 .cm-header-2,
 .cm-hr,
+.callout-title,
 .cm-s-obsidian :is(
   span.cm-link,
   span.cm-hmd-internal-link,
@@ -243,6 +244,10 @@ body {
 ) {
   color: var(--ion-current-color);
   text-shadow: 0 0 var(--bloom-size) var(--bloom-color), 0 0 min(calc(var(--bloom-size) / 2), 1em) var(--bloom-color);
+}
+
+.callout-icon > .svg-icon {
+  color: var(--ion-current-color);
 }
 
 h2, .cm-header-2 {
@@ -272,6 +277,10 @@ hr, .markdown-rendered hr {
   box-shadow: 0 0 var(--bloom-size) 1px var(--bloom-color), 0 0 min(calc(var(--bloom-size) / 2), 1em) 1px var(--bloom-color);
 }
 
+.callout {
+  box-shadow: 0 0 var(--bloom-size) var(--bloom-size) var(--ion-current-color), 0 0 var(--bloom-size) var(--bloom-size) inset var(--ion-current-color);
+}
+
 /*.theme-dark .callout {
   box-shadow: 0 0 .5em .5em rgba(var(--callout-color), .15), 0 0 .5em .5em inset rgba(var(--callout-color), .15);
 }*/
@@ -289,15 +298,25 @@ hr, .markdown-rendered hr {
 }*/
 
 .callout {
+  --callout-h: 217; --callout-s: 100%; --ion-callout-l: 63;
   --callout-l: calc(var(--ion-callout-l) * 1%);
+
+  --current-h: var(--callout-h);
+  --current-s: var(--callout-s);
+  --ion-current-l: var(--ion-callout-l);
+
+  /*--ion-current-color: hsl(var(--current-h), var(--current-s), var(--current-l));*/
+
   border-width: 1px;
-  border-color: hsl(var(--callout-h), var(--callout-s), var(--callout-l));
+  border-color: hsl(var(--callout-h), var(--callout-s), calc(var(--callout-l) * 1));
   /*border: 1px solid hsl(var(--callout-h), var(--callout-s), 90%);*/
 }
 
-.callout {
-  --callout-h: 217; --callout-s: 100%; --ion-callout-l: 63;
-}
+/*.callout-title {
+  --ion-current-color: hsl(var(--current-h), var(--current-s), var(--current-l));
+  color: var(--ion-current-color);
+}*/
+
 .callout[data-callout="abstract"],
 .callout[data-callout="summary"],
 .callout[data-callout="tldr"] {
