@@ -234,6 +234,7 @@ body {
 .inline-title,
 .cm-line,
 .cm-header-2,
+.cm-hr,
 .cm-s-obsidian :is(
   span.cm-link,
   span.cm-hmd-internal-link,
