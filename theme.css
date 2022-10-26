@@ -144,6 +144,11 @@
 
 /**/
 
+/*
+- A zero size text shadow still changes appearance (negative doesn't)
+- Size with a function always does
+*/
+
 body {
   --test: #024;
   --test-2: #012;
@@ -228,12 +233,18 @@ body {
 .markdown-preview-view :is(*, h2),
 .inline-title,
 .cm-line,
-.cm-s-obsidian span.cm-link, .cm-s-obsidian span.cm-hmd-internal-link {
+.cm-header-2,
+.cm-s-obsidian :is(
+  span.cm-link,
+  span.cm-hmd-internal-link,
+  span.cm-formatting-quote,
+  .cm-formatting-header
+) {
   color: var(--ion-current-color);
   text-shadow: 0 0 var(--bloom-size) var(--bloom-color), 0 0 min(calc(var(--bloom-size) / 2), 1em) var(--bloom-color);
 }
 
-h2 {
+h2, .cm-header-2 {
   --current-h:     90;
   --current-s:     100%;
   --ion-current-l: 85;
@@ -333,4 +344,9 @@ hr, .markdown-rendered hr {
 .callout[data-callout="quote"],
 .callout[data-callout="cite"] {
   --callout-h: 0; --callout-s: 0%; --ion-callout-l: 61;
+}
+
+.cm-s-obsidian span.cm-formatting-quote {
+  --current-s:     0%;
+  --ion-current-l: 30;
 }
