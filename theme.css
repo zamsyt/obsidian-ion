@@ -251,9 +251,86 @@ p, .cm-line {
   --ion-current-l: 90;
 }
 
-hr {
-  --ion-current-l: 120;
+hr, .markdown-rendered hr {
+  --ion-current-l: 80;
+  --current-h: 220;
+  --current-s: 50%;
   border-width: 1px;
   border-color: var(--ion-current-color);
   box-shadow: 0 0 var(--bloom-size) 1px var(--bloom-color), 0 0 min(calc(var(--bloom-size) / 2), 1em) 1px var(--bloom-color);
+}
+
+/*.theme-dark .callout {
+  box-shadow: 0 0 .5em .5em rgba(var(--callout-color), .15), 0 0 .5em .5em inset rgba(var(--callout-color), .15);
+}*/
+/*.theme-dark .callout-title, .theme-dark .callout-icon > .svg-icon {
+  color: white;
+}
+.theme-dark .callout-title {
+  text-shadow: 0 0 10px rgb(var(--callout-color)), 0 0 10px rgb(var(--callout-color));
+}*/
+/*.theme-dark .callout-icon > .svg-icon {
+  filter: drop-shadow(0px 0px 3px rgb(var(--callout-color))) drop-shadow(0px 0px 3px rgb(var(--callout-color)));
+}
+.callout {
+  border: 1px solid rgb(var(--callout-color));
+}*/
+
+.callout {
+  --callout-l: calc(var(--ion-callout-l) * 1%);
+  border-width: 1px;
+  border-color: hsl(var(--callout-h), var(--callout-s), var(--callout-l));
+  /*border: 1px solid hsl(var(--callout-h), var(--callout-s), 90%);*/
+}
+
+.callout {
+  --callout-h: 217; --callout-s: 100%; --ion-callout-l: 63;
+}
+.callout[data-callout="abstract"],
+.callout[data-callout="summary"],
+.callout[data-callout="tldr"] {
+  --callout-h: 198; --callout-s: 100%; --ion-callout-l: 50;
+}
+.callout[data-callout="info"],
+.callout[data-callout="todo"] {
+  --callout-h: 187; --callout-s: 100%; --ion-callout-l: 41;
+}
+.callout[data-callout="tip"],
+.callout[data-callout="hint"],
+.callout[data-callout="important"] {
+  --callout-h: 171; --callout-s: 100%; --ion-callout-l: 37;
+}
+.callout[data-callout="success"],
+.callout[data-callout="check"],
+.callout[data-callout="done"] {
+  --callout-h: 144; --callout-s: 100%; --ion-callout-l: 39;
+}
+.callout[data-callout="question"],
+.callout[data-callout="help"],
+.callout[data-callout="faq"] {
+  --callout-h: 96; --callout-s: 81%; --ion-callout-l: 47;
+}
+.callout[data-callout="warning"],
+.callout[data-callout="caution"],
+.callout[data-callout="attention"] {
+  --callout-h: 34; --callout-s: 100%; --ion-callout-l: 50;
+}
+.callout[data-callout="failure"],
+.callout[data-callout="fail"],
+.callout[data-callout="missing"] {
+  --callout-h: 0; --callout-s: 100%; --ion-callout-l: 66;
+}
+.callout[data-callout="danger"],
+.callout[data-callout="error"] {
+  --callout-h: 348; --callout-s: 99%; --ion-callout-l: 54;
+}
+.callout[data-callout="bug"] {
+  --callout-h: 338; --callout-s: 100%; --ion-callout-l: 48;
+}
+.callout[data-callout="example"] {
+  --callout-h: 255; --callout-s: 100%; --ion-callout-l: 65;
+}
+.callout[data-callout="quote"],
+.callout[data-callout="cite"] {
+  --callout-h: 0; --callout-s: 0%; --ion-callout-l: 61;
 }
