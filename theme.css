@@ -1,3 +1,32 @@
+/* @settings
+
+name: ion
+id: ion
+settings:
+  -
+    id: bloom
+    title: Bloom
+    type: heading
+    level: 2
+  -
+    id: bloom-fct
+    title: Strength
+    type: variable-number-slider
+    default: .3
+    min: 0
+    max: 1
+    step: .05
+  -
+    id: ion-threshold
+    title: Threshold
+    type: variable-number-slider
+    default: 80
+    min: 0
+    max: 100
+    step: 5
+
+*/
+
 /*Reset*/
 .theme-dark {
   --color-base-00: #000;
@@ -13,7 +42,9 @@
 }
 
 body {
-  --bloom: .03em;
+  --bloom-fct: .3;
+  --bloom-const: .1em;
+  --bloom: calc(var(--bloom-const) * var(--bloom-fct));
   --ion-threshold: 80;
 
   --base-h: 25;
