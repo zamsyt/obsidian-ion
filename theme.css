@@ -61,10 +61,14 @@ body {
 
   --ion-color: hsl(var(--ion-h), var(--ion-s), var(--ion-l));
 
+  --bloom-hsl: var(--ion-h), var(--ion-s), 50%;
+
   --bloom-color: hsl(var(--ion-h), var(--ion-s), 50%);
   --bloom-size: calc(var(--bloom) * (var(--ion-l-p) - var(--ion-threshold)));
 }
 
+body,
+.markdown-preview-view,
 
 .inline-title,
 
@@ -77,23 +81,85 @@ body {
 .cm-s-obsidian span.cm-hmd-internal-link):is(*, :hover),
 .markdown-source-view.mod-cm6 :is(.cm-link, .cm-url) .cm-underline:hover,
 
-.callout, .callout-title
+.callout, .callout-title,
+
+.markdown-rendered code, .cm-s-obsidian span.cm-inline-code,
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock,
+.markdown-source-view.mod-cm6 .code-block-flair,
+.token.punctuation, .cm-punctuation, .cm-bracket, .cm-hr,
+
+.cm-s-obsidian .cm-math,
+.cm-s-obsidian span.cm-formatting-math,
+
+.nav-folder.mod-root > .nav-folder-title,
+body:not(.is-grabbing) :is(.nav-file-title, .nav-folder-title):is(
+  *, :hover, .is-active, .is-active:hover),
+
+.cm-s-obsidian span.cm-footref, .cm-s-obsidian span.cm-blockid,
+.cm-s-obsidian .cm-line.HyperMD-footnote span.cm-hmd-footnote:is(*, :hover),
+
+.cm-s-obsidian span.cm-hmd-escape-char,
+
+.setting-item-name,
+.setting-item-description,
+.vertical-tab-header-group-title,
+
+select, .dropdown,
+
+.modal-close-button:is(*, :hover),
+
+.view-header-title-parent .view-header-breadcrumb:is(*, :hover),
+.view-header-title-parent .view-header-breadcrumb-separator,
+.is-focused .workspace-leaf.mod-active .view-header-title,
+
+.is-focused .mod-active .workspace-tab-header.is-active .workspace-tab-header-inner-title,
+
+.cm-s-obsidian span.cm-comment,
+
+ol > li::marker, ul > li::marker, .cm-s-obsidian .cm-formatting-list,
+
+strong, .cm-strong
 {
   color: var(--ion-color);
   text-shadow: 0 0 var(--bloom-size) var(--bloom-color), 0 0 min(calc(var(--bloom-size) / 2), 1em) var(--bloom-color);
 }
 
 body {
-  --icon-bloom: calc(var(--bloom) * 1)
+  --icon-bloom: calc(var(--bloom) * 1);
+  --icon-bloom-size: calc(var(--bloom-size) / 3);
+
+  --marker-bloom-size: calc(var(--bloom-size) / 5);
 }
 
-.callout-icon > .svg-icon {
-  --icon-bloom-size: calc(var(--bloom-size) / 3);
+.callout-icon > .svg-icon,
+
+.is-focused .mod-active .workspace-tab-header.is-active :is(
+  .workspace-tab-header-inner-icon, .workspace-tab-header-inner-close-button)
+{
   color: var(--ion-color);
   /*filter: drop-shadow(0px 0px 3px hsl(var(--callout-bloom-hsl))) drop-shadow(0px 0px 3px hsl(var(--callout-bloom-hsl)));*/
   filter:
     drop-shadow(0px 0px var(--icon-bloom-size) hsl(var(--callout-bloom-hsl)))
     drop-shadow(0px 0px var(--icon-bloom-size) hsl(var(--callout-bloom-hsl)));
+}
+
+.list-bullet:after {
+  background-color: var(--ion-color);
+
+  /*--callout-bloom: calc(var(--bloom) * .5);
+
+  --callout-l-p: 85 !important;
+  --callout-l: calc(var(--callout-l-p) * 1%);
+  --ion-callout-color: hsl(var(--callout-h), var(--callout-s), var(--callout-l));
+  --callout-bloom-hsl: var(--callout-h), var(--callout-s), 50%;
+  --callout-bloom-size: calc(var(--callout-bloom) * (var(--callout-l-p) - var(--ion-threshold)));
+
+  border-width: var(--size-2-1);
+  border-color: hsl(var(--callout-h), var(--callout-s), var(--callout-l));
+
+  --callout-bloom-size-s: calc(var(--callout-bloom-size) / 4);*/
+
+  box-shadow: 0 0 var(--marker-bloom-size) var(--marker-bloom-size) hsla(var(--bloom-hsl), .1);
 }
 
 
@@ -116,7 +182,10 @@ h6, .cm-header-6 { --ion-h: calc(10 + 5 * 50); }
 a,
 .external-link,
 .cm-s-obsidian span.cm-link,
-.cm-s-obsidian span.cm-hmd-internal-link {
+.cm-s-obsidian span.cm-hmd-internal-link,
+
+.HyperMD-footnote .cm-hmd-footnote
+{
   --ion-h: var(--accent-h);
   --ion-s: 70%;
 }
@@ -169,3 +238,31 @@ a,
 { contain: none !important; }
 .cm-embed-block.markdown-rendered.cm-callout.show-indentation-guide
 { overflow: visible; }
+
+
+
+/*.cm-s-obsidian :is(.cm-inline-code, .cm-math),
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock,
+.cm-s-obsidian :is(.HyperMD-codeblock-begin, .HyperMD-codeblock-end),
+.markdown-rendered code,
+.cm-s-obsidian span.cm-inline-code,
+kbd
+{
+  --ion-l-p: 60;
+}*/
+
+/*.markdown-rendered code, .cm-s-obsidian span.cm-inline-code*/
+code, .cm-s-obsidian .cm-inline-code,
+.HyperMD-codeblock,
+.cm-footref, .cm-blockid
+{
+  --ion-l-p: 60;
+}
+
+.cm-comment {
+  --ion-l-p: 10;
+}
+
+strong, .cm-strong {
+  --ion-l-p: 94;
+}
