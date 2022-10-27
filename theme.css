@@ -108,17 +108,24 @@ select, .dropdown,
 
 .modal-close-button:is(*, :hover),
 
-.view-header-title-parent .view-header-breadcrumb:is(*, :hover),
-.view-header-title-parent .view-header-breadcrumb-separator,
-.is-focused .workspace-leaf.mod-active .view-header-title,
+.view-header-title-parent :is(.view-header-breadcrumb:is(*, :hover),
+  .view-header-breadcrumb-separator),
+:is(*, .is-focused .workspace-leaf.mod-active) .view-header-title,
 
-.is-focused .mod-active .workspace-tab-header.is-active .workspace-tab-header-inner-title,
+:is(*, .is-focused .mod-active) .workspace-tab-header.is-active .workspace-tab-header-inner-title,
 
 .cm-s-obsidian span.cm-comment,
 
 ol > li::marker, ul > li::marker, .cm-s-obsidian .cm-formatting-list,
 
-strong, .cm-strong
+strong, .cm-strong,
+
+:is(*, .tree-item-self:hover) .tree-item-flair,
+
+.search-result:not(.is-collapsed) .search-result-file-title,
+.search-result-file-match:is(*, :hover),
+
+textarea, input[type='text'], input[type='search'], input[type='email'], input[type='password'], input[type='number']
 {
   color: var(--ion-color);
   text-shadow: 0 0 var(--bloom-size) var(--bloom-color), 0 0 min(calc(var(--bloom-size) / 2), 1em) var(--bloom-color);
@@ -131,33 +138,23 @@ body {
   --marker-bloom-size: calc(var(--bloom-size) / 5);
 }
 
+.search-result-hover-button,
+
+.search-input-clear-button,
+
 .callout-icon > .svg-icon,
 
 .is-focused .mod-active .workspace-tab-header.is-active :is(
   .workspace-tab-header-inner-icon, .workspace-tab-header-inner-close-button)
 {
   color: var(--ion-color);
-  /*filter: drop-shadow(0px 0px 3px hsl(var(--callout-bloom-hsl))) drop-shadow(0px 0px 3px hsl(var(--callout-bloom-hsl)));*/
   filter:
-    drop-shadow(0px 0px var(--icon-bloom-size) hsl(var(--callout-bloom-hsl)))
-    drop-shadow(0px 0px var(--icon-bloom-size) hsl(var(--callout-bloom-hsl)));
+    drop-shadow(0px 0px var(--icon-bloom-size) var(--bloom-color))
+    drop-shadow(0px 0px var(--icon-bloom-size) var(--bloom-color));
 }
 
 .list-bullet:after {
   background-color: var(--ion-color);
-
-  /*--callout-bloom: calc(var(--bloom) * .5);
-
-  --callout-l-p: 85 !important;
-  --callout-l: calc(var(--callout-l-p) * 1%);
-  --ion-callout-color: hsl(var(--callout-h), var(--callout-s), var(--callout-l));
-  --callout-bloom-hsl: var(--callout-h), var(--callout-s), 50%;
-  --callout-bloom-size: calc(var(--callout-bloom) * (var(--callout-l-p) - var(--ion-threshold)));
-
-  border-width: var(--size-2-1);
-  border-color: hsl(var(--callout-h), var(--callout-s), var(--callout-l));
-
-  --callout-bloom-size-s: calc(var(--callout-bloom-size) / 4);*/
 
   box-shadow: 0 0 var(--marker-bloom-size) var(--marker-bloom-size) hsla(var(--bloom-hsl), .1);
 }
@@ -265,4 +262,18 @@ code, .cm-s-obsidian .cm-inline-code,
 
 strong, .cm-strong {
   --ion-l-p: 94;
+}
+
+
+
+textarea, input[type='text'], input[type='search'], input[type='email'], input[type='password'], input[type='number'] {
+  border-color: hsl(var(--callout-h), var(--callout-s), var(--callout-l));
+
+  box-shadow:
+    0 0 var(--bloom-size) var(--marker-bloom-size) var(--bloom-color),
+    0 0 var(--bloom-size) var(--marker-bloom-size) var(--bloom-color) inset;
+}
+
+body {
+  --search-icon-color: var(--ion-color);
 }
