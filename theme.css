@@ -155,7 +155,10 @@ button:not(.clickable-icon):is(*, :hover, .mod-cta),
 .mobile-option-setting-item,
 
 .search-suggest-item.mod-group,
-.search-suggest-info-text
+.search-suggest-info-text,
+
+.tree-item-self,
+.tree-item-inner-subtext
 {
   color: var(--ion-color);
   text-shadow: 0 0 var(--bloom-size) var(--bloom-color), 0 0 min(calc(var(--bloom-size) / 2), 1em) var(--bloom-color);
@@ -373,9 +376,15 @@ kbd,
 .setting-item-description,
 
 .search-suggest-item.mod-group,
-.search-suggest-info-text
+.search-suggest-info-text,
+
+.tree-item-self
 {
   --ion-l-p: 60;
+}
+
+.tree-item-inner-subtext {
+  --ion-l-p: 40;
 }
 
 select, .dropdown,
