@@ -158,7 +158,9 @@ button:not(.clickable-icon):is(*, :hover, .mod-cta),
 .search-suggest-info-text,
 
 .tree-item-self,
-.tree-item-inner-subtext
+.tree-item-inner-subtext,
+
+.status-bar
 {
   color: var(--ion-color);
   text-shadow: 0 0 var(--bloom-size) var(--bloom-color), 0 0 min(calc(var(--bloom-size) / 2), 1em) var(--bloom-color);
