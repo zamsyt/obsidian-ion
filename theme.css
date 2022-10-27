@@ -142,7 +142,13 @@ input[type='email'], input[type='password'], input[type='number'],
 
 kbd,
 
-button:not(.clickable-icon):is(*, :hover, .mod-cta)
+button:not(.clickable-icon):is(*, :hover, .mod-cta),
+
+.backlink-pane > .tree-item-self, .outgoing-link-pane > .tree-item-self,
+
+.search-empty-state,
+
+:is(.backlink-pane, .outgoing-link-pane) > .tree-item-self:is(*, .is-collapsed, :hover, .is-collapsed:hover)
 {
   color: var(--ion-color);
   text-shadow: 0 0 var(--bloom-size) var(--bloom-color), 0 0 min(calc(var(--bloom-size) / 2), 1em) var(--bloom-color);
@@ -347,7 +353,9 @@ input:is([type='text'], [type='search'], [type='email'],
 
 .markdown-rendered th,
 
-kbd
+kbd,
+
+.search-empty-state
 {
   --ion-l-p: 60;
 }
