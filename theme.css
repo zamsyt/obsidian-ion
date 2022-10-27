@@ -43,7 +43,9 @@ body {
 .cm-line,
 .markdown-preview-view p,
 
-a, .external-link
+:is(a, .external-link, .cm-s-obsidian span.cm-link,
+.cm-s-obsidian span.cm-hmd-internal-link):is(*, :hover),
+.markdown-source-view.mod-cm6 :is(.cm-link, .cm-url) .cm-underline:hover
 {
   color: var(--ion-color);
   text-shadow: 0 0 var(--bloom-size) var(--bloom-color), 0 0 min(calc(var(--bloom-size) / 2), 1em) var(--bloom-color);
@@ -63,3 +65,18 @@ h3, .cm-header-3 { --ion-h: calc(2 * 45); }
 h4, .cm-header-4 { --ion-h: calc(3 * 45); }
 h5, .cm-header-5 { --ion-h: calc(4 * 45); }
 h6, .cm-header-6 { --ion-h: calc(5 * 45); }
+
+
+
+a,
+.external-link,
+.cm-s-obsidian span.cm-link,
+.cm-s-obsidian span.cm-hmd-internal-link {
+  --ion-h: var(--accent-h);
+  --ion-s: 70%;
+}
+
+:is(a, .external-link, .cm-s-obsidian span.cm-link,
+.cm-s-obsidian span.cm-hmd-internal-link):hover {
+  --ion-l-p: 120;
+}
