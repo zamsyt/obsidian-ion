@@ -125,7 +125,22 @@ strong, .cm-strong,
 .search-result:not(.is-collapsed) .search-result-file-title,
 .search-result-file-match:is(*, :hover),
 
-textarea, input[type='text'], input[type='search'], input[type='email'], input[type='password'], input[type='number']
+textarea, input[type='text'], input[type='search'],
+input[type='email'], input[type='password'], input[type='number'],
+
+.u-muted,
+
+.community-item-author,
+.community-item-downloads,
+.community-modal-info-downloads,
+.community-modal-info-author,
+.community-modal-info-repo,
+.community-modal-info-version,
+.community-modal-readme,
+
+.markdown-rendered th,
+
+kbd
 {
   color: var(--ion-color);
   text-shadow: 0 0 var(--bloom-size) var(--bloom-color), 0 0 min(calc(var(--bloom-size) / 2), 1em) var(--bloom-color);
@@ -145,7 +160,17 @@ body {
 .callout-icon > .svg-icon,
 
 .is-focused .mod-active .workspace-tab-header.is-active :is(
-  .workspace-tab-header-inner-icon, .workspace-tab-header-inner-close-button)
+  .workspace-tab-header-inner-icon, .workspace-tab-header-inner-close-button),
+
+.clickable-icon, .community-modal-sidebar button.clickable-icon,
+.clickable-icon[aria-disabled='true'],
+.workspace-tab-header-tab-list .clickable-icon, .workspace-tab-header-new-tab .clickable-icon,
+.mod-left-split .workspace-tab-header.has-active-menu .workspace-tab-header-inner-icon, .mod-right-split .workspace-tab-header.has-active-menu .workspace-tab-header-inner-icon, .mod-left-split .workspace-tab-header.is-active .workspace-tab-header-inner-icon, .mod-right-split .workspace-tab-header.is-active .workspace-tab-header-inner-icon,
+.workspace-tab-header-inner:is(*, :hover) .workspace-tab-header-inner-icon,
+.mod-left-split .workspace-tab-header:active .workspace-tab-header-inner-icon, .mod-right-split .workspace-tab-header:active .workspace-tab-header-inner-icon,
+.clickable-icon:hover,
+
+.titlebar-button
 {
   color: var(--ion-color);
   filter:
@@ -287,4 +312,44 @@ body {
   border-radius: 100vmax;
   border-color: var(--ion-color);
   box-shadow: 0 0 var(--bloom-size) var(--bloom-size-s) hsla(var(--bloom-hsl), .5);
+}
+
+/*:placeholder {
+  --ion-l-p: 30;
+  --ion-h: 90;
+}*/
+
+* {
+  --ion-l: calc(var(--ion-l-p) * 1%);
+
+  --ion-color: hsl(var(--ion-h), var(--ion-s), var(--ion-l));
+
+  --bloom-hsl: var(--ion-h), var(--ion-s), 50%;
+
+  --bloom-color: hsl(var(--ion-h), var(--ion-s), 50%);
+  --bloom-size: calc(var(--bloom) * (var(--ion-l-p) - var(--ion-threshold)));
+}
+
+textarea::placeholder,
+input:is([type='text'], [type='search'], [type='email'],
+  [type='password'], [type='number'])::placeholder
+{
+  color: hsl(var(--ion-h), var(--ion-s), 40%);
+}
+
+
+.u-muted,
+
+.community-item-author,
+.community-item-downloads,
+.community-modal-info-downloads,
+.community-modal-info-author,
+.community-modal-info-repo,
+.community-modal-info-version,
+
+.markdown-rendered th,
+
+kbd
+{
+  --ion-l-p: 60;
 }
