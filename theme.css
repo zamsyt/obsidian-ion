@@ -152,7 +152,10 @@ button:not(.clickable-icon):is(*, :hover, .mod-cta),
 
 :is(.backlink-pane, .outgoing-link-pane) > .tree-item-self:is(*, .is-collapsed, :hover, .is-collapsed:hover),
 
-.mobile-option-setting-item
+.mobile-option-setting-item,
+
+.search-suggest-item.mod-group,
+.search-suggest-info-text
 {
   color: var(--ion-color);
   text-shadow: 0 0 var(--bloom-size) var(--bloom-color), 0 0 min(calc(var(--bloom-size) / 2), 1em) var(--bloom-color);
@@ -182,7 +185,11 @@ body {
 .mod-left-split .workspace-tab-header:active .workspace-tab-header-inner-icon, .mod-right-split .workspace-tab-header:active .workspace-tab-header-inner-icon,
 .clickable-icon:hover,
 
-.titlebar-button
+.titlebar-button,
+
+.nav-file-icon,
+
+.list-item-part.clickable-icon:is(*, :active, :hover)
 {
   color: var(--ion-color);
   filter:
@@ -363,7 +370,10 @@ kbd,
 
 .mobile-option-setting-item,
 
-.setting-item-description
+.setting-item-description,
+
+.search-suggest-item.mod-group,
+.search-suggest-info-text
 {
   --ion-l-p: 60;
 }
