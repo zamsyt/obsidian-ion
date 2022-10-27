@@ -40,15 +40,29 @@ body {
 .cm-header,
 .markdown-preview-view :is(h1, h2, h3, h4, h5, h6),
 
-.cm-line,
-.markdown-preview-view p,
+.cm-line, .markdown-preview-view p,
 
 :is(a, .external-link, .cm-s-obsidian span.cm-link,
 .cm-s-obsidian span.cm-hmd-internal-link):is(*, :hover),
-.markdown-source-view.mod-cm6 :is(.cm-link, .cm-url) .cm-underline:hover
+.markdown-source-view.mod-cm6 :is(.cm-link, .cm-url) .cm-underline:hover,
+
+.callout, .callout-title
 {
   color: var(--ion-color);
   text-shadow: 0 0 var(--bloom-size) var(--bloom-color), 0 0 min(calc(var(--bloom-size) / 2), 1em) var(--bloom-color);
+}
+
+body {
+  --icon-bloom: calc(var(--bloom) * 1)
+}
+
+.callout-icon > .svg-icon {
+  --icon-bloom-size: calc(var(--bloom-size) / 3);
+  color: var(--ion-color);
+  /*filter: drop-shadow(0px 0px 3px hsl(var(--callout-bloom-hsl))) drop-shadow(0px 0px 3px hsl(var(--callout-bloom-hsl)));*/
+  filter:
+    drop-shadow(0px 0px var(--icon-bloom-size) hsl(var(--callout-bloom-hsl)))
+    drop-shadow(0px 0px var(--icon-bloom-size) hsl(var(--callout-bloom-hsl)));
 }
 
 
@@ -80,3 +94,47 @@ a,
 .cm-s-obsidian span.cm-hmd-internal-link):hover {
   --ion-l-p: 120;
 }
+
+
+
+.callout { --callout-h: 217; --callout-s: 100%; --callout-l-p: 63; } .callout:is([data-callout="abstract"], [data-callout="summary"], [data-callout="tldr"]) { --callout-h: 198; --callout-s: 100%; --callout-l-p: 50; } .callout:is([data-callout="info"], [data-callout="todo"]) { --callout-h: 187; --callout-s: 100%; --callout-l-p: 41; } .callout:is([data-callout="tip"], [data-callout="hint"], [data-callout="important"]) { --callout-h: 171; --callout-s: 100%; --callout-l-p: 37; } .callout:is([data-callout="success"], [data-callout="check"], [data-callout="done"]) { --callout-h: 144; --callout-s: 100%; --callout-l-p: 39; } .callout:is([data-callout="question"], [data-callout="help"], [data-callout="faq"]) { --callout-h: 96; --callout-s: 81%; --callout-l-p: 47; } .callout:is([data-callout="warning"], [data-callout="caution"], [data-callout="attention"]) { --callout-h: 34; --callout-s: 100%; --callout-l-p: 50; } .callout:is([data-callout="failure"], [data-callout="fail"], [data-callout="missing"]) { --callout-h: 0; --callout-s: 100%; --callout-l-p: 66; } .callout:is([data-callout="danger"], [data-callout="error"]) { --callout-h: 348; --callout-s: 99%; --callout-l-p: 54; } .callout[data-callout="bug"] { --callout-h: 338; --callout-s: 100%; --callout-l-p: 48; } .callout[data-callout="example"] { --callout-h: 255; --callout-s: 100%; --callout-l-p: 65; } .callout:is([data-callout="quote"], [data-callout="cite"]) { --callout-h: 0; --callout-s: 0%; --callout-l-p: 61; }
+
+.callout {
+  background-color: transparent;
+
+  --callout-bloom: calc(var(--bloom) * .5);
+
+  --callout-l-p: 85 !important;
+  --callout-l: calc(var(--callout-l-p) * 1%);
+  --ion-callout-color: hsl(var(--callout-h), var(--callout-s), var(--callout-l));
+  --callout-bloom-hsl: var(--callout-h), var(--callout-s), 50%;
+  --callout-bloom-size: calc(var(--callout-bloom) * (var(--callout-l-p) - var(--ion-threshold)));
+
+  border-width: var(--size-2-1);
+  border-color: hsl(var(--callout-h), var(--callout-s), var(--callout-l));
+
+  --callout-bloom-size-s: calc(var(--callout-bloom-size) / 4);
+
+  box-shadow:
+    0 0 var(--callout-bloom-size)   var(--callout-bloom-size)   hsla(var(--callout-bloom-hsl), .5),
+    0 0 var(--callout-bloom-size)   var(--callout-bloom-size)   hsla(var(--callout-bloom-hsl), .5) inset,
+    0 0 var(--callout-bloom-size-s) var(--callout-bloom-size-s) hsla(var(--callout-bloom-hsl), .5),
+    0 0 var(--callout-bloom-size-s) var(--callout-bloom-size-s) hsla(var(--callout-bloom-hsl), .5) inset;
+
+  --ion-color: var(--ion-callout-color);
+}
+
+.callout,
+.callout-title, .callout-title *,
+.callout-content, .callout-content p {
+  /*--ion-color: inherit;*/
+  --ion-h: var(--callout-h);
+  --ion-s: var(--callout-s);
+  --ion-l-p: var(--callout-l-p);
+}
+
+/*to make box-shadow visible.. not sure if problematic?*/
+.markdown-source-view.mod-cm6 .cm-content > [contenteditable=false]
+{ contain: none !important; }
+.cm-embed-block.markdown-rendered.cm-callout.show-indentation-guide
+{ overflow: visible; }
