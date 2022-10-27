@@ -140,7 +140,9 @@ input[type='email'], input[type='password'], input[type='number'],
 
 .markdown-rendered th,
 
-kbd
+kbd,
+
+button:not(.clickable-icon):is(*, :hover, .mod-cta)
 {
   color: var(--ion-color);
   text-shadow: 0 0 var(--bloom-size) var(--bloom-color), 0 0 min(calc(var(--bloom-size) / 2), 1em) var(--bloom-color);
@@ -314,10 +316,6 @@ body {
   box-shadow: 0 0 var(--bloom-size) var(--bloom-size-s) hsla(var(--bloom-hsl), .5);
 }
 
-/*:placeholder {
-  --ion-l-p: 30;
-  --ion-h: 90;
-}*/
 
 * {
   --ion-l: calc(var(--ion-l-p) * 1%);
@@ -352,4 +350,28 @@ input:is([type='text'], [type='search'], [type='email'],
 kbd
 {
   --ion-l-p: 60;
+}
+
+button:not(.clickable-icon):is(*, :hover) {
+  background: none;
+
+  border: 1px solid var(--ion-color);
+}
+
+button:not(.clickable-icon):hover {
+  --ion-l-p: 100;
+}
+
+button.mod-cta {
+  --ion-h: var(--accent-h);
+  --ion-s: var(--accent-s);
+  --ion-l-p: 90;
+
+  border-color: var(--ion-color);
+
+  --bloom-size-s: calc(var(--bloom-size) / 2);
+
+  box-shadow:
+    0 0 var(--bloom-size-s) var(--bloom-size-s) hsla(var(--bloom-hsl), .5),
+    0 0 var(--bloom-size-s) var(--bloom-size-s) hsla(var(--bloom-hsl), .5) inset;
 }
