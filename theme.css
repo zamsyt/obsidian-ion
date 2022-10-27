@@ -112,7 +112,7 @@ select, .dropdown,
   .view-header-breadcrumb-separator),
 :is(*, .is-focused .workspace-leaf.mod-active) .view-header-title,
 
-:is(*, .is-focused .mod-active) .workspace-tab-header.is-active .workspace-tab-header-inner-title,
+:is(*, .is-focused .mod-active) .workspace-tab-header:is(*, .is-active) .workspace-tab-header-inner-title,
 
 .cm-s-obsidian span.cm-comment,
 
@@ -167,7 +167,7 @@ body {
 
 .callout-icon > .svg-icon,
 
-.is-focused .mod-active .workspace-tab-header.is-active :is(
+:is(*, .is-focused .mod-active) .workspace-tab-header:is(*, .is-active) :is(
   .workspace-tab-header-inner-icon, .workspace-tab-header-inner-close-button),
 
 .clickable-icon, .community-modal-sidebar button.clickable-icon,
