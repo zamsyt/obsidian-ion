@@ -18,20 +18,20 @@ body {
 
   --base-h: 25;
   --base-s: 40%;
-  --base-l-val: 85;
+  --base-l-p: 85;
 
   --ion-h: var(--base-h);
   --ion-s: var(--base-s);
-  --ion-l-val: var(--base-l-val);
+  --ion-l-p: var(--base-l-p);
 }
 
 * {
-  --ion-l: calc(var(--ion-l-val) * 1%);
+  --ion-l: calc(var(--ion-l-p) * 1%);
 
   --ion-color: hsl(var(--ion-h), var(--ion-s), var(--ion-l));
 
   --bloom-color: hsl(var(--ion-h), var(--ion-s), 50%);
-  --bloom-size: calc(var(--bloom) * (var(--ion-l-val) - var(--ion-threshold)));
+  --bloom-size: calc(var(--bloom) * (var(--ion-l-p) - var(--ion-threshold)));
 }
 
 
@@ -54,7 +54,7 @@ h1, h2, h3, h4, h5, h6,
 .inline-title,
 .cm-header {
   --ion-s: 100%;
-  --ion-l-val: 90;
+  --ion-l-p: 90;
 }
 
 h1, .cm-header-1 { --ion-h: calc(0 * 45); }
