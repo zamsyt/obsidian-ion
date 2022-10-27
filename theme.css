@@ -104,12 +104,12 @@ h1, h2, h3, h4, h5, h6,
   --ion-l-p: 90;
 }
 
-h1, .cm-header-1 { --ion-h: calc(0 * 45); }
-h2, .cm-header-2 { --ion-h: calc(1 * 45); }
-h3, .cm-header-3 { --ion-h: calc(2 * 45); }
-h4, .cm-header-4 { --ion-h: calc(3 * 45); }
-h5, .cm-header-5 { --ion-h: calc(4 * 45); }
-h6, .cm-header-6 { --ion-h: calc(5 * 45); }
+h1, .cm-header-1 { --ion-h: calc(10 + 0 * 50); }
+h2, .cm-header-2 { --ion-h: calc(10 + 1 * 50); }
+h3, .cm-header-3 { --ion-h: calc(10 + 2 * 50); }
+h4, .cm-header-4 { --ion-h: calc(10 + 3 * 50); }
+h5, .cm-header-5 { --ion-h: calc(10 + 4 * 50); }
+h6, .cm-header-6 { --ion-h: calc(10 + 5 * 50); }
 
 
 
