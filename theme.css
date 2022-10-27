@@ -33,11 +33,11 @@ settings:
   --color-base-10: #000;
   --color-base-20: #000;
   --color-base-25: #000;
-  --color-base-30: #002;
+  --color-base-30: #000;
 
-  --color-base-50: #013;
+  --color-base-50: #000;
 
-  --color-base-70: #014;
+  --color-base-70: #000;
   --color-base-100: #024;
 }
 
@@ -92,7 +92,7 @@ body,
 .cm-s-obsidian span.cm-formatting-math,
 
 .nav-folder.mod-root > .nav-folder-title,
-body:not(.is-grabbing) :is(.nav-file-title, .nav-folder-title):is(
+body:is(*, .is-grabbing) :is(.nav-file-title, .nav-folder-title):is(
   *, :hover, .is-active, .is-active:hover),
 
 .cm-s-obsidian span.cm-footref, .cm-s-obsidian span.cm-blockid,
