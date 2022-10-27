@@ -277,3 +277,14 @@ textarea, input[type='text'], input[type='search'], input[type='email'], input[t
 body {
   --search-icon-color: var(--ion-color);
 }
+
+
+.markdown-rendered hr, .cm-line hr {
+  --ion-l-p: 100;
+  /*--ion-h: var(--accent-h);*/
+  --bloom-size-s: calc(var(--bloom-size) / 3);
+  border-width: 1px;
+  border-radius: 100vmax;
+  border-color: var(--ion-color);
+  box-shadow: 0 0 var(--bloom-size) var(--bloom-size-s) hsla(var(--bloom-hsl), .5);
+}
