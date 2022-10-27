@@ -39,6 +39,8 @@ settings:
 
   --color-base-70: #000;
   --color-base-100: #024;
+
+  --tab-divider-color: #000;
 }
 
 body {
@@ -148,7 +150,9 @@ button:not(.clickable-icon):is(*, :hover, .mod-cta),
 
 .search-empty-state,
 
-:is(.backlink-pane, .outgoing-link-pane) > .tree-item-self:is(*, .is-collapsed, :hover, .is-collapsed:hover)
+:is(.backlink-pane, .outgoing-link-pane) > .tree-item-self:is(*, .is-collapsed, :hover, .is-collapsed:hover),
+
+.mobile-option-setting-item
 {
   color: var(--ion-color);
   text-shadow: 0 0 var(--bloom-size) var(--bloom-color), 0 0 min(calc(var(--bloom-size) / 2), 1em) var(--bloom-color);
@@ -355,7 +359,11 @@ input:is([type='text'], [type='search'], [type='email'],
 
 kbd,
 
-.search-empty-state
+.search-empty-state,
+
+.mobile-option-setting-item,
+
+.setting-item-description
 {
   --ion-l-p: 60;
 }
