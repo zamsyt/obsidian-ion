@@ -168,7 +168,9 @@ button:not(.clickable-icon):is(*, :hover, .mod-cta),
 .frontmatter-container .frontmatter-container-header,
 .frontmatter-container .frontmatter-alias,
 
-.popover.hover-popover.mod-empty
+.popover.hover-popover.mod-empty,
+
+.pane-empty
 {
   color: var(--ion-color);
   text-shadow: 0 0 var(--bloom-size) var(--bloom-color), 0 0 min(calc(var(--bloom-size) / 2), 1em) var(--bloom-color);
@@ -398,7 +400,10 @@ kbd,
   --ion-l-p: 60;
 }
 
-.tree-item-inner-subtext {
+.tree-item-inner-subtext,
+
+.pane-empty
+{
   --ion-l-p: 40;
 }
 
