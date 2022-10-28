@@ -170,7 +170,11 @@ button:not(.clickable-icon):is(*, :hover, .mod-cta),
 
 .popover.hover-popover.mod-empty,
 
-.pane-empty
+.pane-empty,
+
+.suggestion-item.mod-complex .suggestion-note,
+
+.prompt-instructions
 {
   color: var(--ion-color);
   text-shadow: 0 0 var(--bloom-size) var(--bloom-color), 0 0 min(calc(var(--bloom-size) / 2), 1em) var(--bloom-color);
@@ -204,7 +208,9 @@ body {
 
 .nav-file-icon,
 
-.list-item-part.clickable-icon:is(*, :active, :hover)
+.list-item-part.clickable-icon:is(*, :active, :hover),
+
+.suggestion-item.mod-complex .suggestion-flair
 {
   color: var(--ion-color);
   filter:
@@ -395,7 +401,13 @@ kbd,
 .cm-hmd-frontmatter,
 .frontmatter-container,
 
-.popover.hover-popover.mod-empty
+.popover.hover-popover.mod-empty,
+
+.suggestion-note,
+
+.prompt-instructions,
+
+.suggestion-item.mod-complex .suggestion-flair
 {
   --ion-l-p: 60;
 }
