@@ -160,7 +160,15 @@ button:not(.clickable-icon):is(*, :hover, .mod-cta),
 .tree-item-self,
 .tree-item-inner-subtext,
 
-.status-bar
+.status-bar,
+
+.cm-hmd-frontmatter,
+.cm-hmd-frontmatter.cm-hmd-frontmatter.cm-def,
+.frontmatter-container,
+.frontmatter-container .frontmatter-container-header,
+.frontmatter-container .frontmatter-alias,
+
+.popover.hover-popover.mod-empty
 {
   color: var(--ion-color);
   text-shadow: 0 0 var(--bloom-size) var(--bloom-color), 0 0 min(calc(var(--bloom-size) / 2), 1em) var(--bloom-color);
@@ -380,7 +388,12 @@ kbd,
 .search-suggest-item.mod-group,
 .search-suggest-info-text,
 
-.tree-item-self
+.tree-item-self,
+
+.cm-hmd-frontmatter,
+.frontmatter-container,
+
+.popover.hover-popover.mod-empty
 {
   --ion-l-p: 60;
 }
@@ -439,4 +452,16 @@ body:not(.native-scrollbars) ::-webkit-scrollbar-thumb:active {
   --ion-l-p: 80;
   /*box-shadow: 0 0 .2em .2em red;*/
   /*-webkit-box-shadow: 0px 0px .2em red;*/
+}
+
+
+
+.markdown-source-view.mod-cm6 .cm-content {
+  caret-color: var(--ion-color);
+}
+
+
+.frontmatter-container-header,
+.frontmatter-alias {
+	--ion-l-p: 80;
 }
