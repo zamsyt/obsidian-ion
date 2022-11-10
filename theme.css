@@ -147,11 +147,11 @@ h1, h2, h3, h4, h5, h6 {
 
 
 /* Links */
-a, .cm-link, .cm-url {
+a, .cm-link, .cm-url, .cm-hmd-internal-link {
   --ion-h: var(--accent-h);
   --ion-s: var(--accent-s);
 }
-:hover:is(a, .cm-link, .cm-url) {
+:hover:is(a, .cm-link, .cm-url, .cm-hmd-internal-link) {
   --ion-l-p: 100;
 }
 
@@ -174,7 +174,8 @@ a, .cm-link, .cm-url {
 }
 
 /* Text faint */
-.tree-item-self.is-collapsed, .search-empty-state, .tree-item-flair {
+.tree-item-self.is-collapsed, .search-empty-state, .tree-item-flair,
+.cm-formatting-link {
   --ion-l-p: 40;
 }
 
