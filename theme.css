@@ -140,3 +140,31 @@ h1, h2, h3, h4, h5, h6 {
   [type='password'], [type='number']))::placeholder {
   color: hsl(var(--ion-hs), 40%);
 }
+
+
+/* Links */
+a, .cm-link, .cm-url {
+  --ion-h: var(--accent-h);
+  --ion-s: var(--accent-s);
+}
+:hover:is(a, .cm-link, .cm-url) {
+  --ion-l-p: 100;
+}
+
+/* Icons */
+.clickable-icon {
+  --ion-h: var(--base-h); --ion-s: var(--base-s); --ion-l-p: var(--base-l-p);
+}
+:hover.clickable-icon {
+  --ion-l-p: 150;
+}
+
+/* Text muted */
+.cm-hmd-frontmatter {
+  --ion-l-p: 60;
+}
+
+/* Text faint */
+.tree-item-self.is-collapsed, .search-empty-state, .tree-item-flair {
+  --ion-l-p: 40;
+}
