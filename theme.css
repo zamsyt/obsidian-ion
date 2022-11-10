@@ -101,7 +101,8 @@ body {
   --border-bloom: var(--bloom-box), var(--bloom-box) inset;
 }
 
-:root:root:root:root:root * {
+:root:root:root:root:root *,
+:root ::marker {
   color: var(--ion-color);
 }
 
