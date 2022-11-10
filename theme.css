@@ -247,3 +247,8 @@ button.mod-cta {
   --ion-h: 0;
   --ion-s: 100%;
 }
+
+/* Bold */
+strong, .cm-strong {
+  --ion-l-p: 95;
+}
