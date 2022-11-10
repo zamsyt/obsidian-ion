@@ -97,7 +97,7 @@ body {
   --bloom-drop: drop-shadow(0px 0px var(--bloom-size-s) var(--bloom-color));
   --bloom-box: 0 0 var(--bloom-size-s) var(--bloom-size-s) hsla(var(--bloom-hsl), .5);
   --icon-bloom: var(--bloom-drop) var(--bloom-drop);
-  --callout-bloom: var(--bloom-box), var(--bloom-box) inset;
+  --border-bloom: var(--bloom-box), var(--bloom-box) inset;
 }
 
 :root:root:root:root:root * {
@@ -186,7 +186,7 @@ a, .cm-link, .cm-url, .cm-hmd-internal-link {
   background-color: transparent;
   border-color: var(--ion-color);
   border-width: var(--size-2-1);
-  box-shadow: var(--callout-bloom);
+  box-shadow: var(--border-bloom);
 }
 
 .callout,
@@ -203,4 +203,25 @@ a, .cm-link, .cm-url, .cm-hmd-internal-link {
 }
 .cm-embed-block.markdown-rendered.cm-callout.show-indentation-guide {
   overflow: visible;
+}
+
+/* Buttons */
+:root:root button {
+  background-color: transparent;
+}
+
+button:not(.clickable-icon) {
+  background-color: transparent;
+  border: 1px solid var(--ion-color);
+  box-shadow: var(--border-bloom);
+}
+
+button:not(.clickable-icon):hover {
+  --ion-l-p: 100;
+}
+
+button.mod-cta {
+  --ion-h: var(--accent-h);
+  --ion-s: var(--accent-s);
+  --ion-l-p: 90;
 }
