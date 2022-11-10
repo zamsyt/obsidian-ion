@@ -170,7 +170,10 @@ a, .cm-link, .cm-url, .cm-hmd-internal-link {
 }
 
 /* Text muted */
-.cm-hmd-frontmatter {
+code, .cm-inline-code,
+.cm-hmd-frontmatter,
+.setting-item-description
+{
   --ion-l-p: 60;
 }
 
@@ -236,4 +239,10 @@ button.mod-cta {
   --ion-l-p: 60;
 
   box-shadow: var(--bloom-box);
+}
+
+/* Warning */
+.mod-warning {
+  --ion-h: 0;
+  --ion-s: 100%;
 }
