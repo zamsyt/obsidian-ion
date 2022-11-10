@@ -206,10 +206,12 @@ a, .cm-link, .cm-url, .cm-hmd-internal-link {
 }
 
 /* Buttons */
+:root select.dropdown,
 :root:root button {
   background-color: transparent;
 }
 
+select.dropdown,
 button:not(.clickable-icon) {
   background-color: transparent;
   border: 1px solid var(--ion-color);
