@@ -86,7 +86,9 @@ body {
   --ion-l-p: var(--base-l-p);
 }
 
-* {
+*, ::-webkit-scrollbar-thumb {
+  --ion-hs: var(--ion-h), var(--ion-s);
+
   --ion-l: calc(var(--ion-l-p) * 1%);
   --ion-color: hsl(var(--ion-h), var(--ion-s), var(--ion-l));
   --bloom-hsl: var(--ion-h), var(--ion-s), 50%;
@@ -121,14 +123,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Scrollbars */
-body:not(.native-scrollbars) ::-webkit-scrollbar-thumb,
-body:not(.native-scrollbars) ::-webkit-scrollbar-thumb:hover,
-body:not(.native-scrollbars) ::-webkit-scrollbar-thumb:active {
-  --ion-l-p: 15;
-  --ion-l: calc(var(--ion-l-p) * 1%);
-  background-color: hsl(var(--ion-h), var(--ion-s), var(--ion-l));
+:root body:not(.native-scrollbars) ::-webkit-scrollbar-thumb {
+  background-color: hsl(var(--ion-hs), var(--ion-l));
 }
-body:not(.native-scrollbars) ::-webkit-scrollbar-thumb:hover,
-body:not(.native-scrollbars) ::-webkit-scrollbar-thumb:active {
+
+::-webkit-scrollbar-thumb {
+  --ion-l-p: 15;
+}
+::-webkit-scrollbar-thumb:hover,
+::-webkit-scrollbar-thumb:active {
   --ion-l-p: 70;
+}
+
+
+:is(textarea, input:is([type='text'], [type='search'], [type='email'],
+  [type='password'], [type='number']))::placeholder {
+  color: hsl(var(--ion-hs), 40%);
 }
