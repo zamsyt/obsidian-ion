@@ -69,6 +69,8 @@ settings:
   --color-base-100: #024;
 
   --tab-divider-color: #000;
+
+  --background-modifier-border: transparent;
 }
 
 body {
@@ -216,14 +218,14 @@ code, .cm-inline-code,
   background-color: transparent;
 }
 
-select.dropdown,
+:root select.dropdown,
 button:not(.clickable-icon) {
   background-color: transparent;
   border: 1px solid var(--ion-color);
   box-shadow: var(--border-bloom);
 }
 
-button:not(.clickable-icon):hover {
+:hover:is(button, .dropdown) {
   --ion-l-p: 100;
 }
 
@@ -251,4 +253,25 @@ button.mod-cta {
 /* Bold */
 strong, .cm-strong {
   --ion-l-p: 95;
+}
+
+/* Modal */
+:root:root .modal,
+.prompt,
+.menu
+{
+  border-color: var(--ion-color);
+  box-shadow: var(--border-bloom);
+}
+
+input.prompt-input,
+.vertical-tab-header, .vertical-tab-content
+{
+  background-color: transparent;
+}
+
+:root input.prompt-input,
+.prompt-instructions
+{
+  border: none;
 }
