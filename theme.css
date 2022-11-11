@@ -275,3 +275,47 @@ input.prompt-input,
 {
   border: none;
 }
+
+/* Community item */
+:root .community-item.is-selected {
+  background-color: transparent;
+  border-color: var(--ion-color);
+}
+
+.community-item.is-selected {
+  --ion-h: var(--accent-h);
+  --ion-s: var(--accent-s);
+  --ion-l-p: 90;
+  box-shadow: var(--border-bloom);
+}
+
+.community-item.is-selected:hover {
+  --ion-l-p: 100;
+}
+
+/*
+TODO
+- differentiate border-bloom
+*/
+
+/* Settings */
+
+:root:root :is(.horizontal-tab-nav-item, .vertical-tab-nav-item) {
+  background-color: transparent;
+}
+
+:is(.horizontal-tab-nav-item, .vertical-tab-nav-item) {
+  border: 1px solid transparent;
+}
+
+.is-active:is(.horizontal-tab-nav-item, .vertical-tab-nav-item) {
+  --ion-h: var(--accent-h);
+  --ion-s: var(--accent-s);
+  --ion-l-p: 90;
+  box-shadow: var(--border-bloom);
+  border-color: var(--ion-color);
+}
+
+:hover:is(.horizontal-tab-nav-item, .vertical-tab-nav-item) {
+  --ion-l-p: 100;
+}
