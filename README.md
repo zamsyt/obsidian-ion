@@ -2,7 +2,7 @@
 
 Striving for realistic neon lighting of the entire Obsidian UI.
 
-![](ion-cover.svg)
+![](ion-cover.png)
 
 ![](screenshot.png)
 
