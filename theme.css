@@ -182,7 +182,9 @@ code, .cm-inline-code,
 
 /* Text faint */
 .tree-item-self.is-collapsed, .search-empty-state, .tree-item-flair,
-.cm-formatting-link {
+.cm-formatting-link,
+.cm-comment
+{
   --ion-l-p: 40;
 }
 
