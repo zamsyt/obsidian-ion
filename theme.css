@@ -11,7 +11,7 @@ settings:
     id: base-h
     title: Base hue
     type: variable-number-slider
-    default: 25
+    default: 20
     min: 0
     max: 360
     step: 1
@@ -19,7 +19,7 @@ settings:
     id: base-s
     title: Base saturation
     type: variable-number-slider
-    default: 40
+    default: 50
     min: 0
     max: 100
     step: 1
@@ -79,8 +79,8 @@ body {
   --bloom: calc(var(--bloom-const) * var(--bloom-fct));
   --ion-threshold: 80;
 
-  --base-h: 25;
-  --base-s: 40%;
+  --base-h: 20;
+  --base-s: 50%;
   --base-l-p: 85;
 
   --ion-h: var(--base-h);
