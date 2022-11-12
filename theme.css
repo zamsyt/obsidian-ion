@@ -88,6 +88,10 @@ body {
   --ion-l-p: var(--base-l-p);
 }
 
+body {
+  --text-normal: var(--ion-color);
+}
+
 *, ::-webkit-scrollbar-thumb {
   --ion-hs: var(--ion-h), var(--ion-s);
   --ion-l: calc(var(--ion-l-p) * 1%);
@@ -174,6 +178,7 @@ a, .cm-link, .cm-url, .cm-hmd-internal-link {
 
 /* Text muted */
 code, .cm-inline-code,
+.HyperMD-codeblock,
 .cm-hmd-frontmatter,
 .setting-item-description
 {
