@@ -326,3 +326,9 @@ TODO
 :hover:is(.horizontal-tab-nav-item, .vertical-tab-nav-item) {
   --ion-l-p: 100;
 }
+
+
+:root:root:root:root .cm-transparent {
+  color: transparent;
+  text-shadow: none; 
+}
