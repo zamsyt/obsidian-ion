@@ -347,3 +347,24 @@ TODO
   box-shadow: var(--border-bloom);
   border-radius: 100vmax;
 }
+
+/*Checkbox*/
+:root:root input[type=checkbox] {
+  border: 1px solid var(--ion-color);
+  box-shadow: var(--border-bloom);
+  background-color: transparent;
+}
+
+input[type=checkbox]:checked:after {
+  background-color: var(--ion-color);
+}
+
+input[type=checkbox] {
+  --ion-h: var(--accent-h);
+  --ion-s: var(--accent-s);
+  --ion-l-p: 60;
+}
+
+input[type=checkbox]:checked {
+  --ion-l-p: 100;
+}
