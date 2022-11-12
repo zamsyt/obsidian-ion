@@ -292,12 +292,12 @@ input.prompt-input,
 .community-item.is-selected {
   --ion-h: var(--accent-h);
   --ion-s: var(--accent-s);
-  --ion-l-p: 90;
+  --ion-l-p: 100;
   box-shadow: var(--border-bloom);
 }
 
 .community-item.is-selected:hover {
-  --ion-l-p: 100;
+  --ion-l-p: 110;
 }
 
 /*
