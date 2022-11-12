@@ -339,3 +339,11 @@ TODO
 .list-bullet:after {
   background-color: var(--ion-color);
 }
+
+
+.markdown-rendered hr, .cm-line hr {
+  border-color: var(--ion-color);
+  border-width: 1px;
+  box-shadow: var(--border-bloom);
+  border-radius: 100vmax;
+}
