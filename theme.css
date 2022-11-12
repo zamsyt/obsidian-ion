@@ -189,7 +189,8 @@ code, .cm-inline-code,
 .tree-item-self.is-collapsed, .search-empty-state, .tree-item-flair,
 .cm-formatting-link,
 .cm-comment,
-.cm-formatting-quote
+.cm-formatting-quote,
+.list-bullet
 {
   --ion-l-p: 40;
 }
@@ -332,4 +333,9 @@ TODO
 :root:root:root:root .cm-transparent {
   color: transparent;
   text-shadow: none; 
+}
+
+
+.list-bullet:after {
+  background-color: var(--ion-color);
 }
