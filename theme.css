@@ -1,6 +1,7 @@
 /* @settings
 name: ion
 id: ion
+collapsed: false
 settings:
   -
     id: colors
@@ -8,30 +9,12 @@ settings:
     type: heading
     level: 2
   -
-    id: base-h
-    title: Base hue
-    type: variable-number-slider
-    default: 20
-    min: 0
-    max: 360
-    step: 1
-  -
-    id: base-s
-    title: Base saturation
-    type: variable-number-slider
-    default: 50
-    min: 0
-    max: 100
-    step: 1
-    format: "%"
-  -
-    id: base-l-p
-    title: Base lightness
-    type: variable-number-slider
-    default: 85
-    min: 0
-    max: 100
-    step: 1
+    id: base-d
+    title: Base color
+    type: variable-color
+    format: hsl-split-decimal
+    description: 'Requires Style Settings v1.0.3+'
+    default: '#ecd2c6'
   -
     id: bloom
     title: Bloom
@@ -79,9 +62,13 @@ body {
   --bloom: calc(var(--bloom-const) * var(--bloom-fct));
   --ion-threshold: 80;
 
-  --base-h: 20;
-  --base-s: 50%;
-  --base-l-p: 85;
+  --base-d-h: 20;
+  --base-d-s: .5;
+  --base-d-l: .85;
+
+  --base-h: var(--base-d-h);
+  --base-s: calc(var(--base-d-s) * 100%);
+  --base-l-p: calc(var(--base-d-l) * 100);
 
   --ion-h: var(--base-h);
   --ion-s: var(--base-s);
