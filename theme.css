@@ -16,6 +16,15 @@ settings:
     description: 'Requires Style Settings v1.0.3+'
     default: '#ecd2c6'
   -
+    id: code-base-l
+    title: Code base brightness
+    description: Brightness adjustment for syntax highlighting
+    type: variable-number-slider
+    default: 30
+    min: 0
+    max: 100
+    step: 1
+  -
     id: bloom
     title: Bloom
     type: heading
@@ -164,8 +173,6 @@ a, .cm-link, .cm-url, .cm-hmd-internal-link {
 }
 
 /* Text muted */
-code, .cm-inline-code,
-.HyperMD-codeblock,
 .cm-hmd-frontmatter,
 .setting-item-description
 {
@@ -354,4 +361,132 @@ input[type=checkbox] {
 
 input[type=checkbox]:checked {
   --ion-l-p: 100;
+}
+
+/*Code*/
+code, .cm-inline-code,
+.HyperMD-codeblock {
+  --ion-l-p: 80;
+}
+
+body {
+  --color-red-h: 352; --color-red-s: 80%; --color-red-l-p: 55;
+  --color-green-h: 143; --color-green-s: 91%; --color-green-l-p: 37;
+  --color-orange-h: 29; --color-orange-s: 100%; --color-orange-l-p: 46;
+  --color-yellow-h: 46; --color-yellow-s: 100%; --color-yellow-l-p: 43;
+  --color-cyan-h: 179; --color-cyan-s: 100%; --color-cyan-l-p: 37;
+  --color-blue-h: 211; --color-blue-s: 93%; --color-blue-l-p: 44;
+  --color-purple-h: 254; --color-purple-s: 82%; --color-purple-l-p: 62;
+  --color-pink-h: 331; --color-pink-s: 65%; --color-pink-l-p: 52;
+}
+
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  --token-h: var(--color-red-h); --token-s: var(--color-red-s); --token-l-p: var(--color-red-l-p);
+}
+.token.punctuation {
+  --token-h: var(--color-muted-h); --token-s: var(--color-muted-s); --token-l-p: var(--color-muted-l-p);
+}
+.token.boolean,
+.token.number {
+  --token-h: var(--color-purple-h); --token-s: var(--color-purple-s); --token-l-p: var(--color-purple-l-p);
+}
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.inserted {
+  --token-h: var(--color-green-h); --token-s: var(--color-green-s); --token-l-p: var(--color-green-l-p);
+}
+.token.operator {
+  --token-h: var(--color-red-h); --token-s: var(--color-red-s); --token-l-p: var(--color-red-l-p);
+}
+.token.entity,
+.token.parameter,
+.token.property,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+  --token-h: var(--color-cyan-h); --token-s: var(--color-cyan-s); --token-l-p: var(--color-cyan-l-p);
+}
+.token.atrule,
+.token.attr-value,
+.token.builtin,
+.token.function,
+.token.class-name,
+.token.property-access {
+  --token-h: var(--color-yellow-h); --token-s: var(--color-yellow-s); --token-l-p: var(--color-yellow-l-p);
+}
+.token.keyword {
+  --token-h: var(--color-pink-h); --token-s: var(--color-pink-s); --token-l-p: var(--color-pink-l-p);
+}
+.token.regex,
+.token.important {
+  --token-h: var(--color-orange-h); --token-s: var(--color-orange-s); --token-l-p: var(--color-orange-l-p);
+}
+.cm-inline-code,
+.cm-math,
+.cm-hmd-codeblock {
+  --token-h: var(--base-h);
+  --token-s: 20%;
+  --token-l-p: 50;
+}
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata,
+.cm-comment,
+.cm-meta {
+  --token-h: var(--base-h);
+  --token-s: var(--base-s);
+  --token-l-p: 20;
+}
+.cm-tag {
+  --token-h: var(--color-red-h); --token-s: var(--color-red-s); --token-l-p: var(--color-red-l-p);
+}
+.cm-punctuation,
+.cm-bracket,
+.cm-hr {
+  --token-h: var(--color-muted-h); --token-s: var(--color-muted-s); --token-l-p: var(--color-muted-l-p);
+}
+.cm-number {
+  --token-h: var(--color-purple-h); --token-s: var(--color-purple-s); --token-l-p: var(--color-purple-l-p);
+}
+.cm-qualifier,
+.cm-string,
+.cm-string-2 {
+  --token-h: var(--color-green-h); --token-s: var(--color-green-s); --token-l-p: var(--color-green-l-p);
+}
+.cm-operator {
+  --token-h: var(--color-red-h); --token-s: var(--color-red-s); --token-l-p: var(--color-red-l-p);
+}
+.cm-link,
+.cm-variable,
+.cm-variable-2,
+.cm-variable-3 {
+  --token-h: var(--color-cyan-h); --token-s: var(--color-cyan-s); --token-l-p: var(--color-cyan-l-p);
+}
+.cm-builtin,
+.cm-property,
+.cm-attribute,
+.cm-type {
+  --token-h: var(--color-yellow-h); --token-s: var(--color-yellow-s); --token-l-p: var(--color-yellow-l-p);
+}
+.cm-keyword {
+  --token-h: var(--color-pink-h); --token-s: var(--color-pink-s); --token-l-p: var(--color-pink-l-p);
+}
+
+body {
+  --code-base-l: 30;
+}
+
+.token,
+.cm-attribute, .cm-bracket, .cm-builtin, .cm-comment, .cm-hr, .cm-inline-code, .cm-keyword, .cm-link, .cm-math, .cm-meta, .cm-number, .cm-operator, .cm-property, .cm-punctuation, .cm-qualifier, .cm-string, .cm-string-2, .cm-tag, .cm-type, .cm-variable, .cm-variable-2, .cm-variable-3,
+.cm-math .cm-comment, .cm-meta {
+  --ion-h: var(--token-h);
+  --ion-s: var(--token-s);
+  --ion-l-p: calc(var(--code-base-l) + var(--token-l-p));
 }
