@@ -303,7 +303,7 @@ TODO
 
 /* Settings */
 
-:root:root :is(.horizontal-tab-nav-item, .vertical-tab-nav-item) {
+:root:root:root :is(.horizontal-tab-nav-item, .vertical-tab-nav-item) {
   background-color: transparent;
 }
 
