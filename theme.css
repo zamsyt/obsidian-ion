@@ -215,6 +215,15 @@ a, .cm-link, .cm-url, .cm-hmd-internal-link {
   overflow: visible;
 }
 
+/* Tables */
+body { --table-border-color: var(--ion-color); }
+.markdown-rendered :is(td, th) {
+  box-shadow: var(--bloom-box) inset;
+}
+.markdown-rendered table {
+  box-shadow: var(--bloom-box);
+}
+
 /* Buttons */
 :root select.dropdown,
 :root:root button {
